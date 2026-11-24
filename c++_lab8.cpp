@@ -30,7 +30,7 @@ public:
     { 
         data = other.data; 
         length = other.length;
-          other.data = nullptr; 
+           other.data = nullptr; 
         other.length = 0; 
     } 
  
@@ -55,7 +55,7 @@ public:
         if (this != &other) 
         { 
             delete[] data;
-             data = other.data; 
+              data = other.data; 
             length = other.length; 
  
             other.data = nullptr; 
@@ -80,9 +80,9 @@ public:
  
 // Perfect Forwarding Function 
 template <typename T> 
-String createString(T&& value)
+String createString(T&& value) 
 {
-    return String(forward<T>(value)); 
+       return String(forward<T>(value)); 
 } 
  
 int main() 
@@ -108,7 +108,7 @@ int main()
  
     // Benchmark Move Operations 
     auto startMove = high_resolution_clock::now();
-     for (int i = 0; i < SIZE; i++) 
+      for (int i = 0; i < SIZE; i++) 
     { 
         String temp( 
             "This is a resource-heavy string used for " 
@@ -135,7 +135,7 @@ int main()
          << " milliseconds" << endl; 
  
     cout << "Move Operation Time: "
-     << moveTime.count() 
+             << moveTime.count() 
          << " milliseconds" << endl; 
  
     return 0; 
